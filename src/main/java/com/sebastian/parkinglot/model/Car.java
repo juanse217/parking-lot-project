@@ -9,6 +9,7 @@ public class Car {
 
     public Car(String licensePlate){
         this.licensePlate = licensePlate;
+        this.entryTime = LocalDateTime.now();
     }
 
     public String getLicensePlate() {
