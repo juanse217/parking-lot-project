@@ -67,6 +67,17 @@ public class ParkingService {
         repo.deleteCar(plate);
     }
 
+    public FeeResponseDTO checkout(String plate){
+        validatePlate(plate);
+
+        Car car = findCarOrThrow(plate);
+        BigDecimal fee = calculateFeeAmount(car.getTimeIn());
+
+        repo.deleteCar(plate);
+        
+        return new FeeResponseDTO(plate, formatDuration(car.getTimeIn()), fee);
+    }
+
     public FeeResponseDTO calculateFee(String plate){
         validatePlate(plate);
 
