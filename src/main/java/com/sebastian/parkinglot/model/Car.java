@@ -3,9 +3,9 @@ package com.sebastian.parkinglot.model;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class Car {
+public class Car { //immutable class
     private final String licensePlate;
-    private LocalDateTime entryTime;
+    private final LocalDateTime entryTime;
 
     public Car(String licensePlate){
         this.licensePlate = licensePlate;
