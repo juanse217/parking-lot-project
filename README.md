@@ -18,3 +18,18 @@ We use BigDecimal class in this project because it helps avoiding rounding error
 ## CALCULATEFEE METHOD (SERVICE)
 
 You can see in the service we have 2 methods. One is used for "orchestration", if we can call it that; we focus on getting the car, getting the fee and returning the DTO; these are too many responsibilities for a single method, if we want to change the logic, we'd need to change that whole method. By dividing it, we make that the ```calculateFeeAmount``` only has the purpose of returning the total fee and our other method only focuses on retreving information and returning. 
+
+## CALCULATE FEE IN A SPECIFIC CLASS
+
+Our previous approach is having the methods to calculate the fee in the service class. This violates **SRP** since we're managing the normal parking operations and also calculating the fees. The best we can do is to have a dedicated class for this and comply with SRP 
+
+## KEY TAKEAWAYS FROM THIS SESSION
+
+#### Architectural Decisions You Made:
+✅ Decoupled DTO from domain model (loose coupling)
+✅ Extracted fee calculation to separate class (SRP)
+✅ Used interfaces for extensibility (OCP)
+✅ Created helper methods to eliminate duplication (DRY)
+✅ Added 
+exists()
+ method for semantic clarity
