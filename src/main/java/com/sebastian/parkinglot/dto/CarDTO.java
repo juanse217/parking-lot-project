@@ -3,18 +3,19 @@ package com.sebastian.parkinglot.dto;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-import com.sebastian.parkinglot.model.Car;
 
 public class CarDTO {
     private String licensePlate;
     private LocalDateTime entryTime;
     private Duration totalTime;
 
-    public CarDTO(Car car){
-        this.licensePlate = car.getLicensePlate();
-        this.entryTime = car.getEntryTime();
-        this.totalTime = car.getTimeIn();
-    }
+    public CarDTO(){}
+
+    public CarDTO(String plate, LocalDateTime entryTime, Duration totalTime){
+        this.licensePlate = plate;
+        this.entryTime = entryTime;
+        this.totalTime = totalTime;
+    }//We do not pass the Car class to avoid tight coupling
 
     public String getLicensePlate() {
         return licensePlate;
