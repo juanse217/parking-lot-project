@@ -37,4 +37,9 @@ public class ParkingRepositoryImpl implements ParkingRepository{
         carMap.remove(plate);
     }
 
+    @Override
+    public boolean exists(String plate) {
+        return carMap.containsKey(plate);
+    }
+
 }

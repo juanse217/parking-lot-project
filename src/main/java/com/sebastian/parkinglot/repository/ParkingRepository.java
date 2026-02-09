@@ -10,4 +10,5 @@ public interface ParkingRepository {
     Collection<Car> findAll();
     Optional<Car> findByPlate(String plate);
     void deleteCar(String plate);
+    boolean exists(String plate);
 }
